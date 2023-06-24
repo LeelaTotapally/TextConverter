@@ -5,7 +5,7 @@ import About from './About';
 import Alert from './Alert';
 import './style/App.css';
 import React,{useState} from 'react';
-import {  BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Route, Routes}from 'react-router-dom';
 
 
 
@@ -55,12 +55,12 @@ function App() {
    
   
  
-  <Router>
+
   <Routes>
         <Route path="/" element={<Textbox heading = 'Enter you text below' modecolor = {mode} showAlert = {showAlert} />} />
-        <Route path="/about" element={<About />} />
+        <Route path="/about" element={<About  />} />
       </Routes>
-    </Router>
+
 
   </div>
 
