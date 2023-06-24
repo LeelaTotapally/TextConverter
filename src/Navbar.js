@@ -1,6 +1,7 @@
 import './style/Navbar.css';
 import React from 'react';
 
+
 function Navbar(props) {
   return (
    <>
@@ -14,7 +15,7 @@ function Navbar(props) {
      <div className="collapse navbar-collapse" id="navbarSupportedContent">
        <ul className="navbar-nav me-auto mb-2 mb-lg-0">
          <li className="nav-item">
-           <a className="nav-link active" aria-current="page" href="/">{props.aboutText}</a>
+           <a className="nav-link active" aria-current="page" href="/about">{props.aboutText}</a>
          </li>
          <li className="nav-item">
            <a className="nav-link" href="/">{props.moreInfo}</a>
@@ -26,10 +27,7 @@ function Navbar(props) {
         
          
       </div>
-      <div className="form-check form-switch">
-  <input className="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault"/>
-  <label className="form-check-label" htmlFor="flexSwitchCheckDefault">Default switch checkbox input</label>
-</div>
+      
      
          
    

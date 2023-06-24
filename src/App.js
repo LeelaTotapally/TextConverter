@@ -1,41 +1,67 @@
 import './style/Navbar.css';
 import Navbar from './Navbar';
 import Textbox from './Textbox';
+import About from './About';
 import Alert from './Alert';
 import './style/App.css';
 import React,{useState} from 'react';
+import {  BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
+
 
 
 function App() {
   const[mode, setMode] = useState('light');
-  const[alert, setAlert] = useState(null);
-  const[alertState, setAlertState] = useState(null);
-  
+  const[alert, setAlert] = useState({
+    type : null,
+    message : null
+  });
 
+  const showAlert = (type, message) =>{
+    setAlert({
+      type : type,
+      message : message
+    })
 
+    setTimeout (() =>{
+      setAlert({
+        type : null,
+        message : null
+      })
+    },3000);
+   
+  }
   
   const toggleMode = () =>{
     if(mode === 'light'){
       setMode('dark')
       document.body.style.backgroundColor = 'black'
-      setAlert("Dark mode has been enabled")
-      setAlertState("success")
+      showAlert("success", "darkMode has been enabled")
+     
     }else{
       setMode('light')
       document.body.style.backgroundColor = 'white'
-      setAlert("light mode has been enabled")
-      setAlertState("success")
+      showAlert("success", "lightMode has been enabled")
     }
   }
   return (
   <>
   <div className = 'DivNavBar'>
   <Navbar title = 'TextConverter' modecolorfun = {toggleMode} modecolor = {mode} aboutText = 'About' moreInfo = 'Info'/>
-  <Alert alert = {alert} alertState = {alertState}/>
+ <Alert alertType= {alert.type}  alertMesssage= {alert.message}/>
+ 
   </div>
   <div>
-  <Textbox heading = 'Enter you text below' modecolor = {mode} />
+   
   
+ 
+  <Router>
+  <Routes>
+        <Route path="/" element={<Textbox heading = 'Enter you text below' modecolor = {mode} showAlert = {showAlert} />} />
+        <Route path="/about" element={<About />} />
+      </Routes>
+    </Router>
+
   </div>
 
   </>

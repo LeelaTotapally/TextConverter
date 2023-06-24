@@ -5,6 +5,9 @@ function Textbox(props) {
   const handleUpClick = () =>{
     let newText = text.toUpperCase();
     setText(newText);
+
+    props.showAlert("success", "Converted to upper case")
+    
   }
   const handleOnChange = (event) =>{
     console.log("changed");
