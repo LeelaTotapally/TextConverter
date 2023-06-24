@@ -2,6 +2,7 @@ import './style/Navbar.css';
 import Navbar from './Navbar';
 import Textbox from './Textbox';
 import About from './About';
+import Info from './Info';
 import Alert from './Alert';
 import './style/App.css';
 import React,{useState} from 'react';
@@ -59,6 +60,7 @@ function App() {
   <Routes>
         <Route path="/" element={<Textbox heading = 'Enter you text below' modecolor = {mode} showAlert = {showAlert} />} />
         <Route path="/about" element={<About  />} />
+        <Route path="/Info" element={<Info/>} />
       </Routes>
 
 

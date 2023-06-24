@@ -9,7 +9,7 @@ function Navbar(props) {
    <nav className={`navbar navbar-expand-lg navbar-${props.modecolor} bg-${props.modecolor}`}>
 
    <div className="container-fluid">
-     <a className="navbar-brand" href="/">{props.title}</a>
+     <Link className="navbar-brand" to="/">{props.title}</Link>
      <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
        <span className="navbar-toggler-icon"></span>
      </button>
@@ -19,7 +19,7 @@ function Navbar(props) {
            <Link className="nav-link active" aria-current="page" to="/about">{props.aboutText}</Link>
          </li>
          <li className="nav-item">
-           <a className="nav-link" href="/">{props.moreInfo}</a>
+         <Link className="nav-link" to="/info">{props.moreInfo}</Link>
          </li>
          </ul>
          <div className={`form-check form-switch text-${props.modecolor === 'light' ? 'dark':'light'} mx-3`}>
